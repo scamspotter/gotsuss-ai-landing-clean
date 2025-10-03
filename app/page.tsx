@@ -1,0 +1,1 @@
+export default function Page(){return(<main className='min-h-dvh p-12'><h1 className='text-5xl font-bold'>crowdsource your gut feeling.</h1><p className='mt-4 text-lg'>suss. helps you spot scams before they get you.</p></main>);}
