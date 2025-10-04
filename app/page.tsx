@@ -216,3 +216,14 @@ function Testimonial({ quote, name }: { quote: string; name: string }) {
     </div>
   );
 }
+function Faq({ q, a }: { q: string; a: string }) {
+  return (
+    <details className="group py-5">
+      <summary className="flex cursor-pointer list-none items-center justify-between text-base font-medium">
+        <span className="lowercase">{q}</span>
+        <span className="transition group-open:rotate-45">+</span>
+      </summary>
+      <p className="mt-2 text-sm text-neutral-600">{a}</p>
+    </details>
+  );
+}
