@@ -1,14 +1,13 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// Replace these with your real links
-const SUBMIT_URL = "https://tally.so/r/mBWBJA"; // Tally/Airtable/Typeform
-const EMAIL_CAPTURE_URL = "mailto:submit@gotsuss.ai?subject=Join%20the%20community"; // or a signup URL
-const PRESS_KIT_URL = "#"; // Notion/Drive link (optional)
-const PRIVACY_URL = "#"; // Notion doc is fine for now
-const TERMS_URL = "#";   // Notion doc is fine for now
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// ==== Replace these with your real links ====
+const SUBMIT_URL = "https://tally.so/r/your-form-id"; // e.g. https://tally.so/r/abc123
+const EMAIL_CAPTURE_URL = "mailto:hello@gotsuss.ai?subject=Join%20the%20community";
+const PRESS_KIT_URL = "#";
+const PRIVACY_URL = "#";
+const TERMS_URL = "#";
+// ============================================
 
 export default function Page() {
   const [open, setOpen] = useState(false);
@@ -17,10 +16,12 @@ export default function Page() {
 
   return (
     <main className="min-h-dvh bg-white text-neutral-900">
-      {/* Sticky Nav */}
+      {/* Nav */}
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
-          <a href="#home" className="font-serif lowercase tracking-tight text-2xl font-semibold">suss<span className="align-top">.</span></a>
+          <a href="#home" className="font-serif lowercase tracking-tight text-2xl font-semibold">
+            suss<span className="align-top">.</span>
+          </a>
           <nav className="hidden md:flex items-center gap-8 text-sm">
             <a href="#how" className="hover:opacity-80">how it works</a>
             <a href="#features" className="hover:opacity-80">features</a>
@@ -28,11 +29,17 @@ export default function Page() {
             <a href={PRESS_KIT_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-80">press</a>
           </nav>
           <div className="hidden md:flex items-center gap-2">
-            <button onClick={() => setOpen(true)} className="inline-flex items-center rounded-2xl bg-[#fc1f1e] px-3.5 py-2 text-sm font-semibold text-white hover:opacity-90 transition">submit something suss</button>
-            <a href={EMAIL_CAPTURE_URL} className="inline-flex items-center rounded-2xl border border-neutral-900 px-3.5 py-2 text-sm font-medium hover:bg-neutral-900 hover:text-white transition">get updates</a>
+            <button onClick={() => setOpen(true)} className="inline-flex items-center rounded-2xl bg-[#fc1f1e] px-3.5 py-2 text-sm font-semibold text-white hover:opacity-90 transition">
+              submit something suss
+            </button>
+            <a href={EMAIL_CAPTURE_URL} className="inline-flex items-center rounded-2xl border border-neutral-900 px-3.5 py-2 text-sm font-medium hover:bg-neutral-900 hover:text-white transition">
+              get updates
+            </a>
           </div>
           <div className="md:hidden">
-            <button onClick={() => setOpen(true)} className="inline-flex items-center rounded-xl bg-[#fc1f1e] px-3 py-2 text-sm font-semibold text-white">submit</button>
+            <button onClick={() => setOpen(true)} className="inline-flex items-center rounded-xl bg-[#fc1f1e] px-3 py-2 text-sm font-semibold text-white">
+              submit
+            </button>
           </div>
         </div>
       </header>
@@ -45,10 +52,16 @@ export default function Page() {
             <div>
               <p className="mb-3 inline-flex items-center rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 border border-neutral-200">early access</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">crowdsource your gut feeling.</h1>
-              <p className="mt-4 text-base sm:text-lg text-neutral-700 max-w-prose">suss. helps you spot scams before they get you. submit screenshots, links, or listings and get a community-driven read—fast.</p>
+              <p className="mt-4 text-base sm:text-lg text-neutral-700 max-w-prose">
+                suss. helps you spot scams before they get you. submit screenshots, links, or listings and get a community-driven read—fast.
+              </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button onClick={() => setOpen(true)} className="inline-flex justify-center rounded-2xl bg-[#fc1f1e] px-5 py-3 text-base font-semibold text-white shadow-sm hover:opacity-90">submit something suss</button>
-                <a href={EMAIL_CAPTURE_URL} className="inline-flex justify-center rounded-2xl border border-neutral-900 px-5 py-3 text-base font-medium hover:bg-neutral-900 hover:text-white transition">get updates / join</a>
+                <button onClick={() => setOpen(true)} className="inline-flex justify-center rounded-2xl bg-[#fc1f1e] px-5 py-3 text-base font-semibold text-white shadow-sm hover:opacity-90">
+                  submit something suss
+                </button>
+                <a href={EMAIL_CAPTURE_URL} className="inline-flex justify-center rounded-2xl border border-neutral-900 px-5 py-3 text-base font-medium hover:bg-neutral-900 hover:text-white transition">
+                  get updates / join
+                </a>
               </div>
               <div className="mt-6 flex items-center gap-4 text-xs text-neutral-500">
                 <span>free • no account needed</span>
@@ -56,7 +69,8 @@ export default function Page() {
                 <span>works on mobile & desktop</span>
               </div>
             </div>
-            {/* Social proof / stats card */}
+
+            {/* Social proof card */}
             <div className="rounded-3xl border border-neutral-200 bg-white shadow-sm p-6 lg:p-8 grid gap-6">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <Stat value="1.2k+" label="submissions" />
@@ -74,7 +88,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Feature grid */}
+      {/* Features */}
       <section id="features" className="bg-neutral-50 border-y border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <h2 className="text-2xl sm:text-3xl font-extrabold">why it matters</h2>
@@ -98,12 +112,14 @@ export default function Page() {
             <Step n={3} title="help the next person" desc="vote on a few recent submissions to pay it forward." />
           </div>
           <div className="mt-8">
-            <button onClick={() => setOpen(true)} className="inline-flex rounded-2xl bg-neutral-900 px-5 py-3 text-white font-semibold hover:bg-neutral-800">start a submission</button>
+            <button onClick={() => setOpen(true)} className="inline-flex rounded-2xl bg-neutral-900 px-5 py-3 text-white font-semibold hover:bg-neutral-800">
+              start a submission
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Testimonials (light) */}
+      {/* Testimonials */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-3 gap-4 md:gap-6">
@@ -132,7 +148,9 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
-              <div className="font-serif lowercase text-xl font-semibold">suss<span className="align-top">.</span></div>
+              <div className="font-serif lowercase text-xl font-semibold">
+                suss<span className="align-top">.</span>
+              </div>
               <p className="mt-1 text-sm text-neutral-600">crowdsource your gut feeling.</p>
             </div>
             <div className="flex items-center gap-5 text-sm">
@@ -146,7 +164,7 @@ export default function Page() {
         </div>
       </footer>
 
-      {/* Minimal modal with Tally/Airtable embed */}
+      {/* Modal with embedded form */}
       {mounted && open && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal>
           <div className="relative w-full max-w-3xl rounded-2xl bg-white shadow-xl">
@@ -154,12 +172,14 @@ export default function Page() {
               onClick={() => setOpen(false)}
               aria-label="Close"
               className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200 hover:bg-neutral-50"
-            >×</button>
+            >
+              ×
+            </button>
             <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden">
               <iframe
                 src={SUBMIT_URL + (SUBMIT_URL.includes("tally.so") ? "?transparentBackground=1&hideTitle=1" : "")}
                 className="h-full w-full"
-                frameBorder="0"
+                frameBorder={0}
                 title="suss submission form"
                 allow="clipboard-write; fullscreen"
               />
@@ -171,6 +191,7 @@ export default function Page() {
   );
 }
 
+/* ---------- tiny helper components ---------- */
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div className="rounded-2xl border border-neutral-200 p-4">
@@ -216,6 +237,7 @@ function Testimonial({ quote, name }: { quote: string; name: string }) {
     </div>
   );
 }
+
 function Faq({ q, a }: { q: string; a: string }) {
   return (
     <details className="group py-5">
